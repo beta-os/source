@@ -50,5 +50,6 @@ window.onload = function() {
         system.screen.output.clearRect(0, 0, window.innerWidth, window.innerHeight);
         system.screen.desktop.draw();
         system.screen.menu.draw();
+        system.screen.dock.draw();
     }
 }
