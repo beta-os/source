@@ -28,10 +28,11 @@ internet.createServer(function(req, res) {
         //it's not a file that the browser wants, so it probably wants to see the page
         console.log(req.headers);
         res.setHeader("Content-Type", "text/html");
-        res.end(files.readFileSync("www/index.html"));
+        res.end(files.readFileSync("www/index.html"), "");
     } else {
         //we don't allow POST, by the way; it's an Javascript app
         res.statusCode = 500;
         res.end();
     }
 }).listen(process.env.PORT, process.env.IP);
+ISO-8859-1

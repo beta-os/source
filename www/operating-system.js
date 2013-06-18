@@ -3,6 +3,24 @@ var system = {
         canvas: null,
         output: null,
         menu: {
+            icons: [],
+            widgets: [
+                {
+                    time: "15:18",
+                    draw: function() {
+                        var color = system.screen.output.createLinearGradient(0, 4, 0, 16);
+                        color.addColorStop(0, "#111");
+                        color.addColorStop(1, "#555");
+                        
+                        system.screen.output.font = "bold 16px sans-serif";
+                        system.screen.output.lineWidth = 2;
+                        system.screen.output.strokeStyle = "#DDD";
+                        system.screen.output.strokeText(this.time, window.innerWidth-50, 18);
+                        system.screen.output.fillStyle = color;
+                        system.screen.output.fillText(this.time, window.innerWidth-50, 18);
+                    }
+                }
+            ],
             draw: function() {
                 var background = system.screen.output.createLinearGradient(0, 0, 0, 25);
                 background.addColorStop(0, "#EEE");
@@ -62,6 +80,7 @@ window.onload = function() {
         system.screen.desktop.draw();
         system.screen.menu.draw();
         system.screen.dock.draw();
+        system.screen.menu.widgets[0].draw();
     }
     window.onresize = function() {
         system.screen.canvas.width = window.innerWidth;
@@ -72,5 +91,6 @@ window.onload = function() {
         system.screen.desktop.draw();
         system.screen.menu.draw();
         system.screen.dock.draw();
+        system.screen.menu.widgets[0].draw();
     }
 }
