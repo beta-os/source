@@ -57,7 +57,7 @@ var system = {
                 background.addColorStop(1, "#EEE");
                 
                 system.screen.output.fillStyle = background;
-                system.screen.output.fillRect(0, 20, window.innerWidth, window.innerHeight-20);
+                system.screen.output.fillRect(0, 25, window.innerWidth, window.innerHeight-25);
             }
         },
         windows: {
