@@ -4,18 +4,30 @@ var system = {
         output: null,
         menu: {
             draw: function() {
-                var background = system.screen.output.createLinearGradient(0, 0, 0, 20);
+                var background = system.screen.output.createLinearGradient(0, 0, 0, 25);
                 background.addColorStop(0, "#EEE");
-                background.addColorStop(.99, "#CCC");
-                background.addColorStop(1, "#333");
+                background.addColorStop(1, "#CCC");
                 
                 system.screen.output.fillStyle = background;
-                system.screen.output.fillRect(0, 0, window.innerWidth, 20);
+                system.screen.output.fillRect(0, 0, window.innerWidth, 24);
+                system.screen.output.fillStyle = "#AAA";
+                system.screen.output.fillRect(100, 24, window.innerWidth-100, 1);
+                system.screen.output.fillStyle = "#777";
+                system.screen.output.fillRect(0, 24, 100, 1);
             }
         },
         dock: {
             draw: function() {
+                var background = system.screen.output.createLinearGradient(0, 0, 100, 0);
+                background.addColorStop(0, "#666");
+                background.addColorStop(1, "#888");
                 
+                system.screen.output.fillStyle = background;
+                system.screen.output.fillRect(0, 25, 98, window.innerHeight-25);
+                system.screen.output.fillStyle = "#999";
+                system.screen.output.fillRect(98, 25, 1, window.innerHeight-25);
+                system.screen.output.fillStyle = "#666";
+                system.screen.output.fillRect(99, 25, 1, window.innerHeight-25);
             }
         },
         desktop: {
