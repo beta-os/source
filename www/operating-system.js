@@ -1,5 +1,6 @@
 var system = {
     screen: {
+        canvas: null,
         output: null,
         menu: {
             draw: function() {
@@ -21,7 +22,7 @@ var system = {
             color: "#000",
             widgets: [],
             draw: function() {
-                var background = system.screen.output.createLinearGradient(0, 0, 0, window.innerHeight);
+                var background = system.screen.output.createLinearGradient(0, 0, 0, window.innerHeight-20);
                 background.addColorStop(0, "#FFF");
                 background.addColorStop(1, "#EEE");
                 
@@ -37,17 +38,25 @@ var system = {
 };
 
 window.onload = function() {
-    document.canvas = document.createElement("canvas");
-    document.canvas.width = window.innerWidth;
-    document.canvas.height = window.innerHeight;
+    system.screen.canvas = document.createElement("canvas");
+    system.screen.canvas.width = window.innerWidth;
+    system.screen.canvas.height = window.innerHeight;
     
-    if(document.canvas.getContext) {
+    if(system.screen.canvas.getContext) {
         document.body.innerHTML = "";    
-        document.body.appendChild(document.canvas);
-        system.screen.output = document.canvas.getContext("2d");
+        document.body.appendChild(system.screen.canvas);
+        system.screen.output = system.screen.canvas.getContext("2d");
+        
+        system.screen.desktop.draw();
+        system.screen.menu.draw();
+        system.screen.dock.draw();
     }
     window.onresize = function() {
+        system.screen.canvas.width = window.innerWidth;
+        system.screen.canvas.height = window.innerHeight;
+        
         system.screen.output.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        
         system.screen.desktop.draw();
         system.screen.menu.draw();
         system.screen.dock.draw();
