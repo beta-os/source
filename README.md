@@ -9,12 +9,12 @@ Cool! But how far is it?
 ------------------------
 Not that far, really. Basically, the only thing I've got so far is a few sketches about how I think it should look like. I'll upload those later as I get the scanner working. But there's still a lot that has to happen before the project gets off the ground. Things including:
 
-- [x] kickstart the project by working on a prototype
-- [ ] document all the features the OS should have
-- [ ] in addition, document the aimed user-experience and user-interface
-- [ ] create the user-interface using the HTML5-canvas
-- [ ] find a way to host it secure and properly
-- [ ] create the socket.io API for user-management, logging in, file-streaming, instant messaging and PUSH-messages
-- [ ] create a system to develop and run apps
-- [ ] ???
-- [ ] profit!
+- kickstart the project by working on a prototype
+- document all the features the OS should have
+- in addition, document the aimed user-experience and user-interface
+- create the user-interface using the HTML5-canvas
+- find a way to host it secure and properly
+- create the socket.io API for user-management, logging in, file-streaming, instant messaging and PUSH-messages
+- create a system to develop and run apps
+- ???
+- profit!
